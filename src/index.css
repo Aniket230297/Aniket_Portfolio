@@ -1,5 +1,121 @@
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #050505;
+  color: white;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+::selection {
+  background: #ffffff;
+  color: #000000;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+
+section {
+  scroll-margin-top: 100px;
+}
+
+
+/* ================================
+   FINAL PORTFOLIO POLISH
+================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Better focus accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid rgb(96 165 250);
+  outline-offset: 4px;
+}
+
+/* Prevent text selection on buttons */
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth image rendering */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+/* Pause marquee when hovering */
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Subtle page selection */
+::selection {
+  background: rgba(96, 165, 250, 0.25);
+  color: white;
+}
+
+/* Mobile tap improvements */
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 80px;
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
