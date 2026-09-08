@@ -26,7 +26,7 @@ export default function Footer() {
           {/* Social Links */}
           <div className="flex items-center gap-3">
             <a
-              href="#"
+              href="https://github.com/Aniket230297"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
